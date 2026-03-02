@@ -1,0 +1,76 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: transparent;
+}
+
+.shell {
+  margin: 0;
+  height: 100vh;
+  border-radius: 14px;
+  background: rgba(20, 20, 28, 0.8);
+  color: #f1f5f9;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+}
+
+.dragbar {
+  -webkit-app-region: drag;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.no-drag, .ghost, button, input, textarea { -webkit-app-region: no-drag; }
+
+.title { font-weight: 600; font-size: 14px; }
+.ghost { background: transparent; border: 0; color: #fff; font-size: 20px; }
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  padding: 10px 12px;
+  font-size: 12px;
+}
+
+.history {
+  flex: 1;
+  overflow: auto;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.msg {
+  padding: 8px 10px;
+  border-radius: 10px;
+  white-space: pre-wrap;
+  font-size: 13px;
+}
+.msg.user { background: rgba(99, 102, 241, 0.35); align-self: flex-end; }
+.msg.assistant { background: rgba(30, 41, 59, 0.7); align-self: flex-start; }
+.hint { opacity: .8; font-size: 12px; }
+
+.inputRow { padding: 10px 12px; border-top: 1px solid rgba(255, 255, 255, 0.14); }
+textarea {
+  width: 100%;
+  resize: none;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.06);
+  color: #fff;
+  padding: 8px;
+  box-sizing: border-box;
+}
+.actions { display: flex; gap: 8px; margin-top: 8px; }
+button { border: 0; border-radius: 8px; padding: 7px 10px; background: #6366f1; color: white; cursor: pointer; }
+button:disabled { opacity: .5; }
